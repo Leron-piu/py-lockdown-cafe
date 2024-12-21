@@ -1,11 +1,9 @@
-from __future__ import annotations
 from app.errors import NotVaccinatedError, NotWearingMaskError, OutdatedVaccineError
 import datetime
 
 
 
 class Cafe:
-
     def __init__(self, name: str) -> None:
         self.name = name
 

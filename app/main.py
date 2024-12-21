@@ -1,7 +1,5 @@
-from __future__ import annotations
 from app.errors import VaccineError, NotWearingMaskError, NotVaccinatedError, OutdatedVaccineError
 from app.cafe import Cafe
-import datetime
 
 
 def go_to_cafe(friends: list, cafe: Cafe):
@@ -14,6 +12,5 @@ def go_to_cafe(friends: list, cafe: Cafe):
         except NotWearingMaskError:
             mask_count += 1
     if mask_count != 0:
-        print(f"Friends should buy {mask_count} masks")
-        raise NotVaccinatedError
+        raise NotWearingMaskError(f"Friends should buy {mask_count} masks")
     print(f"Friends can go to {cafe.name}")
